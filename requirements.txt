@@ -1,0 +1,2 @@
+# Matches the book's verified numerical dependency.
+numpy==2.3.5

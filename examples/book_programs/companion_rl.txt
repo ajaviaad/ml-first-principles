@@ -1,0 +1,6 @@
+All numerical checks passed.
+ready: exact value=21.052632, action=work
+  work: learned Q=21.052632, visits=14020
+tired: exact value=18.947368, action=recharge
+  gentle: learned Q=18.052632, visits=1961
+  recharge: learned Q=18.947368, visits=14019

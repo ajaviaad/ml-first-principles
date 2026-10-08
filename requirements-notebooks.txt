@@ -1,0 +1,4 @@
+-r requirements.txt
+# Optional: the Python scripts and tests do not need these packages.
+notebook>=7,<8
+ipykernel>=6,<8

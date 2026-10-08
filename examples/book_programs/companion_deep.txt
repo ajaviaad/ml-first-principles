@@ -1,0 +1,10 @@
+Maximum scaled gradient-check error: 7.289e-12
+Four-point XOR loss: 0.717697 -> 0.001591
+Four-point XOR probabilities: [5.17000e-04 9.98330e-01 9.98117e-01 2.28600e-03]
+Chapter 16 scalar loss after update: 0.14124613
+Chapter 19 attention output: 7.358092
+Chapter 20 graph outputs: [0.5      1.632993 1.5     ]
+Chapter 21 Gaussian KL: 0.818147
+Chapter 22 contrastive loss: 0.142932
+Chapter 24 perplexity: 2.378414
+All mathematical and invariance checks passed.

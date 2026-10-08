@@ -1,0 +1,10 @@
+Chapter 7: intercept and slope [1.166667 0.5     ] SSE 0.16666666666666657
+Chapter 8: logistic gradient verified against finite differences
+Chapter 9: class B fraction, equal and distance weighted 0.3333333333333333 0.5454545454545455
+Chapter 10: best stump (SSE, feature, threshold, left, right) (1.0, 0, np.float64(2.5), np.float64(1.5), np.float64(8.5))
+Chapter 11: squared errors through two boosting stages [16.0, 4.0, 1.0]
+Chapter 12: k-means centers and final objective [1.666667 9.      ] 8.666666666666666
+Chapter 13: PCA reconstruction error equals discarded singular energy
+Chapter 14: Apriori matches exhaustive enumeration; frequent itemsets 6
+Chapter 15: degraded-state filtering probabilities [0.470588 0.86747 ]
+All companion checks passed.

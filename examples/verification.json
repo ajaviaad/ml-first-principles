@@ -1,0 +1,45 @@
+{
+  "verified_on": "2026-10-08",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "system": "Darwin",
+    "machine": "arm64"
+  },
+  "unit_and_integration_tests": {
+    "passed": 56,
+    "failed": 0
+  },
+  "original_listings": {
+    "executed_with_assertions": 5,
+    "source_hashes_matched": 5
+  },
+  "added_experiments": {
+    "executed": 32,
+    "seed": 42,
+    "strict_finite_json": true,
+    "repeated_outputs_match": true
+  },
+  "notebooks": {
+    "structural_checks": 32,
+    "ordered_code_cell_sequences_executed": 32,
+    "browser_UI_tested": false,
+    "nbformat_external_validator_used": false
+  },
+  "package": {
+    "wheel_build": "passed",
+    "local_install_no_dependencies": "passed",
+    "installed_cli_lesson_32_outside_source_tree": "passed"
+  },
+  "limits": [
+    "Verified in the recorded environment, not a multi-platform CI matrix.",
+    "Toy examples test mechanisms, not real-world generalization.",
+    "Optional Jupyter UI was not launched."
+  ],
+  "local_markdown_links": "all resolve",
+  "archive": {
+    "integrity": "passed",
+    "separate_extraction_test_suite": "passed",
+    "separate_extraction_all_experiments": 32
+  }
+}

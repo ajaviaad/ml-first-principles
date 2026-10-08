@@ -1,0 +1,35 @@
+# 10 — Decision trees
+
+**Prerequisites:** means and squared error (06–07), binary classifications, and basic conditional logic. **Objective:** calculate a split's benefit, follow a learned tree, and recognize a limitation of greedy splitting.
+
+A tree partitions feature space by asking questions. A numeric node tests `X[:,feature] <= threshold`; its children repeat the process. A regression leaf predicts the mean response among training rows reaching it. Predictions are piecewise constant rather than a smooth global curve. `X` is shaped `(n,p)` and `y` is `(n,)`.
+
+For diameters `[1,2,3,4]` and sweetness `[1,2,8,9]`, the unsplit mean is 5 and SSE is 50. Splitting at 2.5 gives means 1.5 and 8.5. The four residuals have magnitude 0.5, so SSE becomes 1 and the improvement is 49. Thresholds anywhere strictly between 2 and 3 give the same training partition. The implementation checks midpoints between consecutive distinct values, using the lower endpoint if floating-point rounding cannot represent a valid interior threshold. It chooses the first best split on ties and searches every feature.
+
+```bash
+python -m mlfirst --lesson 10
+```
+
+`baseline_sse` is 50. `stump` contains `[SSE, feature_index, threshold, left_mean, right_mean]`, so expect `[1,0,2.5,1.5,8.5]`. `stump_predictions` repeats the two leaf means. A depth-two tree splits each pair again, giving `depth2_predictions=[1,2,8,9]`. `tree` exposes the nested dictionary: internal nodes contain feature, threshold, gain and child nodes; every node records its mean and count. Perfect training fit here illustrates available capacity, not generalization.
+
+Classification usually selects splits with another impurity. Gini impurity is `1-sum(p_class²)`. A node with six positives and four negatives has `1-.6²-.4²=.48`, reported as `root_gini_6_vs_4`. The module provides this calculation, but its fitted tree is a regression tree, not a full classification estimator. Impurity improvements must weight child impurities by child sample counts.
+
+Greedy growth chooses the best immediate question, not the best eventual tree. For XOR inputs `[0,0],[0,1],[1,0],[1,1]`, labels are `[0,1,1,0]`. Splitting either feature leaves both child means at 0.5 and gains nothing. This implementation requires a strictly positive gain and therefore outputs `xor_greedy_predictions=[.5,.5,.5,.5]`, despite a depth-two tree being capable of representing XOR if zero-gain exploratory splits were allowed.
+
+Control complexity with `max_depth` and `min_leaf`. Depth zero gives a constant model. Minimum leaf size prevents a split that would isolate too few observations. Trees remain unstable around correlated predictors, give constant extrapolations outside learned thresholds, and can favor features with many candidate cut points. A displayed root feature is not proof of causality or intrinsic importance. Finite numeric inputs are required; missing-value routing is deliberately absent.
+
+**Practice**
+
+1. Calculate SSE for the fruit split at 1.5. Hint: the right mean is 19/3.
+2. Fit the fruit data with `min_leaf=2`. Can a second-level split occur?
+3. Describe the two-level questions needed to represent XOR.
+
+<details><summary>Worked solutions</summary>
+
+1. The singleton left leaf has zero error. The right residuals are `-13/3,5/3,8/3`, so SSE is `(169+25+64)/9=86/3`, much worse than 1.
+2. No. Each first-level child contains two observations and cannot split into two leaves of at least two observations each.
+3. Split on the first coordinate, then the second within both branches. Predict one exactly when the answers differ. The obstacle is the greedy first step, not representational capacity.
+
+</details>
+
+**Scope and source:** exhaustive regression stumps, a small recursive regression tree, and Gini arithmetic are included. Cost-complexity pruning, categorical splits, missing-data routing, and feature-importance machinery are not. See [implementation](../mlfirst/classical.py), [original stump](../book_code/companion_classical.py), and [tests](../tests/test_classical.py).

@@ -1,0 +1,1149 @@
+{
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "seed": 42,
+  "lessons": {
+    "01": {
+      "title": "Learning problems and evidence",
+      "result": {
+        "train_rows": 280,
+        "test_rows": 140,
+        "constant_baseline": {
+          "mae": 11.770847491106311,
+          "rmse": 14.271484835405348,
+          "r2": -0.0005698322870346662
+        },
+        "weekday_model": {
+          "mae": 4.856842678255522,
+          "rmse": 6.055443142964912,
+          "r2": 0.8198638214812086
+        },
+        "training_means_by_weekend": [
+          79.80812143114896,
+          109.8781896401719
+        ],
+        "mean_demand": 88.51309611661546,
+        "mean_observed_sales_if_stock_90": 82.82672753561738
+      }
+    },
+    "02": {
+      "title": "Data and experiments",
+      "result": {
+        "train_indices": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47
+        ],
+        "test_indices": [
+          0,
+          1,
+          2,
+          3,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31
+        ],
+        "shared_groups": [],
+        "fitted_mean": [
+          5.889339533138953,
+          1.0
+        ],
+        "fitted_scale": [
+          3.494289028009992,
+          1.0
+        ],
+        "train_scaled_mean": [
+          -6.846375318521799e-16,
+          0.0
+        ],
+        "test_scaled_mean": [
+          -0.4365907617332607,
+          0.0
+        ],
+        "transform_changed_fit": false,
+        "chronological_example": {
+          "train": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "gap": [
+            8,
+            9
+          ],
+          "test": [
+            10,
+            11
+          ]
+        }
+      }
+    },
+    "03": {
+      "title": "The mathematical language of models",
+      "result": {
+        "X_shape": [
+          3,
+          2
+        ],
+        "prediction": [
+          12.0,
+          6.0,
+          21.0
+        ],
+        "analytic_gradient": [
+          -6.0,
+          -3.0
+        ],
+        "numeric_gradient": [
+          -6.000000000039306,
+          -3.000000000019653
+        ],
+        "gradient_max_error": 3.930633596382904e-11,
+        "loss_before": 4.5,
+        "loss_after": 1.125,
+        "stable_logsumexp_1000_999": 1000.3132616875182
+      }
+    },
+    "04": {
+      "title": "Probability and statistical inference",
+      "result": {
+        "defect_given_flag": 0.15384615384615385,
+        "bernoulli_mle": 0.8,
+        "beta_posterior_parameters": [
+          9,
+          3
+        ],
+        "posterior_mean": 0.75,
+        "bootstrap_mean_interval": [
+          0.5,
+          1.0
+        ],
+        "entropy_nats": 0.6931471805599453,
+        "kl_nats": 0.5108256237659907,
+        "cross_entropy_nats": 1.203972804325936
+      }
+    },
+    "05": {
+      "title": "Optimization and generalization",
+      "result": {
+        "stable_path": [
+          3.0,
+          1.7999999999999998,
+          1.0799999999999998,
+          0.6479999999999999,
+          0.3887999999999999,
+          0.23327999999999993,
+          0.13996799999999995,
+          0.08398079999999997,
+          0.05038847999999998,
+          0.030233087999999984,
+          0.018139852799999988,
+          0.010883911679999993,
+          0.006530347007999996
+        ],
+        "unstable_path": [
+          3.0,
+          -3.6000000000000005,
+          4.320000000000001,
+          -5.184000000000002,
+          6.220800000000003,
+          -7.464960000000006,
+          8.95795200000001,
+          -10.749542400000013,
+          12.899450880000018,
+          -15.479341056000024,
+          18.57520926720003,
+          -22.290251120640036,
+          26.748301344768045
+        ],
+        "degree_scores": {
+          "1": {
+            "train_rmse": 0.30160041227864454,
+            "validation_rmse": 0.27670398092878296
+          },
+          "5": {
+            "train_rmse": 0.25981552431926513,
+            "validation_rmse": 0.32959847249859936
+          },
+          "15": {
+            "train_rmse": 0.0644690066944549,
+            "validation_rmse": 2.231178833231615
+          }
+        },
+        "selected_degree": 1
+      }
+    },
+    "06": {
+      "title": "Measuring what matters",
+      "result": {
+        "threshold_0_5": {
+          "tp": 40,
+          "fp": 40,
+          "fn": 10,
+          "tn": 910,
+          "accuracy": 0.95,
+          "precision": 0.5,
+          "recall": 0.8,
+          "f1": 0.6153846153846154,
+          "brier": 0.03587500000000001,
+          "log_loss": 0.1360745355669444,
+          "roc_auc": 0.9747368421052631
+        },
+        "threshold_for_fp_cost_1_fn_cost_9": 0.1,
+        "cost_sensitive": {
+          "tp": 50,
+          "fp": 40,
+          "fn": 0,
+          "tn": 910,
+          "accuracy": 0.96,
+          "precision": 0.5555555555555556,
+          "recall": 1.0,
+          "f1": 0.7142857142857143,
+          "brier": 0.03587500000000001,
+          "log_loss": 0.1360745355669444,
+          "roc_auc": 0.9747368421052631
+        },
+        "conformal_rank_for_19_at_90_percent": 18,
+        "conformal_radius": 3.6,
+        "conformal_width": 7.2
+      }
+    },
+    "07": {
+      "title": "Linear and nonlinear regression",
+      "result": {
+        "coefficients": [
+          1.1666666666666659,
+          0.5000000000000001
+        ],
+        "residuals": [
+          -0.16666666666666585,
+          0.3333333333333339,
+          -0.16666666666666607
+        ],
+        "sse": 0.16666666666666657,
+        "residual_sum": 1.9984014443252818e-15,
+        "ridge_coefficients_lambda_2": [
+          1.4166666666666663,
+          0.2500000000000003
+        ],
+        "heldout_line_mse": 1.304770218977373,
+        "heldout_quadratic_mse": 0.00042088218310885173
+      }
+    },
+    "08": {
+      "title": "Probability for classification",
+      "result": {
+        "initial_loss": 0.6931471805599453,
+        "final_loss": 0.5188582027571396,
+        "coefficients": [
+          -0.33405872409280435,
+          1.4395632198478325,
+          -0.8687332234661636
+        ],
+        "test_accuracy": 0.925,
+        "test_brier_score": 0.08422850834306657,
+        "archive_urgent_probability": 0.8888888888888888,
+        "archive_duplicate_deadline_probability": 0.9846153846153847,
+        "sigmoid_extremes": [
+          0.0,
+          0.5,
+          1.0
+        ]
+      }
+    },
+    "09": {
+      "title": "Neighbors and separating surfaces",
+      "result": {
+        "query": 4.4,
+        "probability_k1": 1.0,
+        "probability_k3": 0.3333333333333333,
+        "probability_weighted_k3": 0.46788990825688076,
+        "neighborhood_radius_k3": 3.4000000000000004,
+        "margin_width": 2.0,
+        "regularized_hinge_objective": 0.5,
+        "hinge_weight_subgradient": [
+          1.0
+        ],
+        "hinge_bias_subgradient": -0.0,
+        "rbf_smallest_eigenvalue": 0.20723876711886866
+      }
+    },
+    "10": {
+      "title": "Decision trees",
+      "result": {
+        "baseline_sse": 50.0,
+        "stump": [
+          1.0,
+          0,
+          2.5,
+          1.5,
+          8.5
+        ],
+        "stump_predictions": [
+          1.5,
+          1.5,
+          8.5,
+          8.5
+        ],
+        "depth2_predictions": [
+          1.0,
+          2.0,
+          8.0,
+          9.0
+        ],
+        "root_gini_6_vs_4": 0.48,
+        "xor_greedy_predictions": [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "tree": {
+          "value": 5.0,
+          "count": 4,
+          "n_features": 1,
+          "feature": 0,
+          "threshold": 2.5,
+          "gain": 49.0,
+          "left": {
+            "value": 1.5,
+            "count": 2,
+            "n_features": 1,
+            "feature": 0,
+            "threshold": 1.5,
+            "gain": 0.5,
+            "left": {
+              "value": 1.0,
+              "count": 1,
+              "n_features": 1
+            },
+            "right": {
+              "value": 2.0,
+              "count": 1,
+              "n_features": 1
+            }
+          },
+          "right": {
+            "value": 8.5,
+            "count": 2,
+            "n_features": 1,
+            "feature": 0,
+            "threshold": 3.5,
+            "gain": 0.5,
+            "left": {
+              "value": 8.0,
+              "count": 1,
+              "n_features": 1
+            },
+            "right": {
+              "value": 9.0,
+              "count": 1,
+              "n_features": 1
+            }
+          }
+        }
+      }
+    },
+    "11": {
+      "title": "Ensembles",
+      "result": {
+        "boosting_sse_history": [
+          16.0,
+          4.0,
+          1.0
+        ],
+        "boosting_predictions": [
+          2.5,
+          2.5,
+          5.5,
+          5.5
+        ],
+        "bagging_predictions": [
+          2.2,
+          2.2,
+          5.2,
+          5.8
+        ],
+        "first_bootstrap_indices": [
+          0,
+          3,
+          2,
+          1
+        ],
+        "ensemble_size": 20,
+        "mean_bootstrap_unique_fraction": 0.7625,
+        "variance_formula_rho_0_2_B_20": 0.24000000000000002
+      }
+    },
+    "12": {
+      "title": "Clustering",
+      "result": {
+        "labels": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "centers": [
+          1.6666666666666667,
+          9.0
+        ],
+        "objective_trace": [
+          17.0,
+          8.666666666666666
+        ],
+        "alternate_labels": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "alternate_centers": [
+          0.5,
+          6.5
+        ],
+        "alternate_objective_trace": [
+          26.0,
+          13.0
+        ],
+        "preferred_run": "first"
+      }
+    },
+    "13": {
+      "title": "Low dimensional structure",
+      "result": {
+        "singular_values": [
+          3.162277660168379,
+          1.4142135623730951,
+          1.815067602535886e-17
+        ],
+        "first_component": [
+          -0.894427190999916,
+          0.0,
+          -0.44721359549995787
+        ],
+        "scores": [
+          -2.23606797749979,
+          2.23606797749979,
+          0.0,
+          0.0
+        ],
+        "retained_variance_fraction": 0.8333333333333333,
+        "reconstruction_sse": 2.0,
+        "discarded_singular_energy": 2.0000000000000004,
+        "covariance_example_retained_fraction": 0.875
+      }
+    },
+    "14": {
+      "title": "Association rules",
+      "result": {
+        "transaction_count": 6,
+        "frequent_itemsets": [
+          {
+            "items": [
+              "biscuits"
+            ],
+            "count": 4
+          },
+          {
+            "items": [
+              "coffee"
+            ],
+            "count": 2
+          },
+          {
+            "items": [
+              "sugar"
+            ],
+            "count": 3
+          },
+          {
+            "items": [
+              "tea"
+            ],
+            "count": 4
+          },
+          {
+            "items": [
+              "biscuits",
+              "tea"
+            ],
+            "count": 3
+          },
+          {
+            "items": [
+              "sugar",
+              "tea"
+            ],
+            "count": 2
+          }
+        ],
+        "tea_to_biscuits": {
+          "antecedent": [
+            "tea"
+          ],
+          "consequent": [
+            "biscuits"
+          ],
+          "count": 3,
+          "support": 0.5,
+          "confidence": 0.75,
+          "lift": 1.125,
+          "leverage": 0.05555555555555558
+        },
+        "rules": [
+          {
+            "antecedent": [
+              "biscuits"
+            ],
+            "consequent": [
+              "tea"
+            ],
+            "count": 3,
+            "support": 0.5,
+            "confidence": 0.75,
+            "lift": 1.125,
+            "leverage": 0.05555555555555558
+          },
+          {
+            "antecedent": [
+              "tea"
+            ],
+            "consequent": [
+              "biscuits"
+            ],
+            "count": 3,
+            "support": 0.5,
+            "confidence": 0.75,
+            "lift": 1.125,
+            "leverage": 0.05555555555555558
+          },
+          {
+            "antecedent": [
+              "sugar"
+            ],
+            "consequent": [
+              "tea"
+            ],
+            "count": 2,
+            "support": 0.3333333333333333,
+            "confidence": 0.6666666666666666,
+            "lift": 1.0,
+            "leverage": 0.0
+          },
+          {
+            "antecedent": [
+              "tea"
+            ],
+            "consequent": [
+              "sugar"
+            ],
+            "count": 2,
+            "support": 0.3333333333333333,
+            "confidence": 0.5,
+            "lift": 1.0,
+            "leverage": 0.0
+          }
+        ]
+      }
+    },
+    "15": {
+      "title": "Probabilistic graphical models",
+      "result": {
+        "observations": [
+          1,
+          1
+        ],
+        "state_names": [
+          "normal",
+          "degraded"
+        ],
+        "filtered_probabilities": [
+          [
+            0.5294117647058822,
+            0.47058823529411764
+          ],
+          [
+            0.1325301204819277,
+            0.8674698795180723
+          ]
+        ],
+        "smoothed_probabilities": [
+          [
+            0.17221828490432314,
+            0.8277817150956769
+          ],
+          [
+            0.1325301204819277,
+            0.8674698795180723
+          ]
+        ],
+        "sequence_probability": 0.07055000000000003,
+        "log_likelihood": -2.6514336006833137,
+        "viterbi_path": [
+          1,
+          1
+        ],
+        "viterbi_state_names": [
+          "degraded",
+          "degraded"
+        ],
+        "viterbi_joint_probability": 0.05760000000000002
+      }
+    },
+    "16": {
+      "title": "Neural networks and backpropagation",
+      "result": {
+        "initial_loss": 0.7285027619616764,
+        "final_loss": 0.002254061428778267,
+        "gradient_error": 9.092857543302468e-12,
+        "xor_probabilities": [
+          0.0007210833027504641,
+          0.9977630808692178,
+          0.9972628320674437,
+          0.00330906962959412
+        ],
+        "training_accuracy": 1.0,
+        "scalar_update_prediction": 1.5315,
+        "scope": "Four-point training fit, not generalization."
+      }
+    },
+    "17": {
+      "title": "Learning from images",
+      "result": {
+        "input_shape": [
+          4,
+          4
+        ],
+        "feature_shape": [
+          4,
+          3
+        ],
+        "edge_response": [
+          0.0,
+          3.0,
+          0.0
+        ],
+        "global_average": 1.0,
+        "zero_branch_residual_error": 0.0,
+        "dense_convolution_weights": 36864,
+        "depthwise_separable_weights": 4672,
+        "scope": "Fixed-filter forward operations; no trained image classifier."
+      }
+    },
+    "18": {
+      "title": "Recurrent models for sequences",
+      "result": {
+        "rnn_states": [
+          0.7615941559557649,
+          0.5436167801938202,
+          0.4094026872592417,
+          0.3162925641545064
+        ],
+        "lstm_cell": 1.6999999999999997,
+        "lstm_hidden": 0.4677045353015495,
+        "contracting_path_50": 1.4272476927059638e-05,
+        "expanding_path_50": 9100.438150002134,
+        "forget_path_50": 0.6050060671375364,
+        "scope": "Forward recurrence and direct-path derivatives; no BPTT training."
+      }
+    },
+    "19": {
+      "title": "Attention and transformers",
+      "result": {
+        "weights": [
+          [
+            0.6697615493266569,
+            0.3302384506733431
+          ]
+        ],
+        "weighted_value": 7.358092394613255,
+        "causal_prefix_error": 0.0,
+        "attention_score_shape": [
+          3,
+          3
+        ],
+        "scope": "One attention head, not a complete transformer."
+      }
+    },
+    "20": {
+      "title": "Learning on graphs",
+      "result": {
+        "node_outputs": [
+          0.4999999999999999,
+          1.632993161855452,
+          1.4999999999999996
+        ],
+        "permutation_error": 0.0,
+        "degree_adjusted_spread_after_40": 1.2861933740282439e-12,
+        "scope": "Fixed linear propagation on an undirected path; no learned graph task."
+      }
+    },
+    "21": {
+      "title": "Autoencoders and latent variables",
+      "result": {
+        "linear_autoencoder_mse": 0.0034905990094186443,
+        "mean_only_mse": 1.5290953082232084,
+        "vae_initial_negative_elbo_without_constant": 1.5470013503198357,
+        "vae_final_negative_elbo_without_constant": 1.016604611578773,
+        "vae_posterior_std": 0.5989162998513134,
+        "gaussian_kl_example": 0.8181471805599453,
+        "reparameterized_sample": 0.0,
+        "scope": "SVD linear AE and trained linear one-latent VAE; unit observation variance."
+      }
+    },
+    "22": {
+      "title": "Self supervised representation learning",
+      "result": {
+        "paired_info_nce": 0.28849103031183126,
+        "shuffled_pair_info_nce": 5.197354128375333,
+        "collapsed_info_nce": 2.4849066497880004,
+        "collapse_reference_log_batch": 2.4849066497880004,
+        "pair_retrieval_accuracy": 1.0,
+        "hand_example_loss": 0.14293162849989968,
+        "scope": "Contrastive objective and score gradients on constructed views; no encoder training."
+      }
+    },
+    "23": {
+      "title": "Learning with scarce labels and transferring knowledge",
+      "result": {
+        "labeled_training_examples": 24,
+        "heldout_examples": 400,
+        "frozen_feature_accuracy": 0.89,
+        "raw_linear_accuracy": 0.48,
+        "lora_materialization_error": 1.7763568394002505e-15,
+        "lora_trainable_parameters": 26,
+        "dense_parameters": 40,
+        "scope": "Hand-designed frozen features and exact low-rank update algebra; no pretrained model."
+      }
+    },
+    "24": {
+      "title": "Language models",
+      "result": {
+        "vocabulary_size": 9,
+        "heldout_perplexity": 3.1568981777069656,
+        "uniform_perplexity": 9.0,
+        "hand_perplexity": 2.378414230005442,
+        "generated_tokens": [
+          "dog",
+          "dog",
+          "runs"
+        ],
+        "row_sum_error": 0.0,
+        "scope": "Smoothed word bigram, including special tokens in all output rows; not an LLM."
+      }
+    },
+    "25": {
+      "title": "Generative adversarial models",
+      "result": {
+        "initial_generator_mean": -1.0,
+        "learned_generator_mean": 2.0181961259102184,
+        "target_mean": 2.0,
+        "generated_sample_mean": 2.0044591642721947,
+        "generated_sample_std": 1.0106642471321796,
+        "discriminator_loss": 1.386350186255792,
+        "generator_loss": 0.6988616584637685,
+        "scope": "Location-only Gaussian GAN; fixed variance and unimodal generator limit coverage."
+      }
+    },
+    "26": {
+      "title": "Diffusion and score based generation",
+      "result": {
+        "forward_example": 0.34000000000000014,
+        "recovered_with_known_noise": 0.8000000000000002,
+        "terminal_alpha_bar": 0.006588349654242763,
+        "reverse_sample_mean": 1.9982943563664721,
+        "reverse_sample_std": 0.49679840450118157,
+        "target_mean": 2.0,
+        "target_std": 0.5,
+        "reverse_steps": 60,
+        "scope": "Exact Gaussian oracle reverse conditionals; initialized at exact terminal marginal; no denoiser training."
+      }
+    },
+    "27": {
+      "title": "Multimodal learning",
+      "result": {
+        "heldout_pairs": 30,
+        "retrieval_before_alignment": 0.0,
+        "retrieval_after_alignment": 1.0,
+        "fusion_weights": [
+          0.19999999999999998,
+          0.7999999999999999
+        ],
+        "fused_speed": 1047.9999999999998,
+        "fused_std": 8.94427190999916,
+        "aligned_audio_time": 1.6,
+        "scope": "Synthetic paired numeric modalities and orthogonal alignment; no image/text encoders."
+      }
+    },
+    "28": {
+      "title": "Sequential decisions",
+      "result": {
+        "seed": 42,
+        "book_robot_values": {
+          "ready": 21.05263157894159,
+          "tired": 18.94736842104714
+        },
+        "optimal_policy": {
+          "ready": "work",
+          "tired": "recharge"
+        },
+        "analytic_ready": 21.052631578947373,
+        "analytic_tired": 18.947368421052637,
+        "delayed_job_return_discount_09": 8.0,
+        "delayed_job_return_discount_05": 4.0,
+        "immediate_job_return": 6.0,
+        "note": "Exact book model; no randomness is needed."
+      }
+    },
+    "29": {
+      "title": "Learning values",
+      "result": {
+        "seed": 42,
+        "learned_q": {
+          "ready": {
+            "work": 21.052631578947214
+          },
+          "tired": {
+            "gentle": 18.052631578947214,
+            "recharge": 18.947368421052474
+          }
+        },
+        "visits": {
+          "ready/work": 14023,
+          "tired/gentle": 1954,
+          "tired/recharge": 14023
+        },
+        "max_value_error": 5.623945753541193e-12,
+        "td_updated_value": 3.65,
+        "q_learning_update": 2.35,
+        "sarsa_update": 1.59,
+        "terminal_target": -3.0,
+        "truncated_target": 87.0,
+        "dqn_continuation": 4,
+        "double_dqn_continuation": 3.0,
+        "note": "Book Q-learning with requested seed; the printed original uses seed 17."
+      }
+    },
+    "30": {
+      "title": "Learning policies",
+      "result": {
+        "seed": 42,
+        "analytic_gradient": 0.6651386198793272,
+        "finite_difference_gradient": 0.6651386198652798,
+        "ppo_clipped_objectives": [
+          2.4,
+          -1.6,
+          -4.199999999999999
+        ],
+        "gae_example": [
+          1.6768,
+          0.9400000000000002,
+          2.0
+        ],
+        "seeded_reinforce_extension": {
+          "initial_probability_a": 0.33181222783183395,
+          "final_probability_a": 0.9797769731420666,
+          "initial_expected_reward": 1.9954366834955017,
+          "final_expected_reward": 3.9393309194261996,
+          "updates": 200
+        },
+        "note": "PPO clipping kernel and sampled REINFORCE are distinct experiments, not a full PPO agent."
+      }
+    },
+    "31": {
+      "title": "Operating reliable learning systems",
+      "result": {
+        "seed": 42,
+        "input_monitor": [
+          {
+            "feature": 0,
+            "standardized_mean_shift": 1.3384384326141194,
+            "reference_missing_fraction": 0.0,
+            "current_missing_fraction": 0.0,
+            "constant_reference": false
+          },
+          {
+            "feature": 1,
+            "standardized_mean_shift": -0.02392761158621071,
+            "reference_missing_fraction": 0.0,
+            "current_missing_fraction": 0.1,
+            "constant_reference": false
+          },
+          {
+            "feature": 2,
+            "standardized_mean_shift": -0.02660501914895187,
+            "reference_missing_fraction": 0.0,
+            "current_missing_fraction": 0.0,
+            "constant_reference": false
+          }
+        ],
+        "held_out_permutation_importance": {
+          "baseline_mse": 0.0385638216889603,
+          "mean_mse_increase": [
+            17.76516709970368,
+            0.0,
+            1.848758298580659
+          ],
+          "permutation_std": [
+            1.0263487983868569,
+            0.0,
+            0.1342864563127316
+          ],
+          "repeats": 20
+        },
+        "local_explanation": {
+          "baseline_prediction": 0.042528789642519056,
+          "contributions": [
+            2.9937122224993917,
+            0.0,
+            -3.036241012141911
+          ],
+          "prediction": 0.0
+        },
+        "partial_dependence_feature_0": [
+          -3.022727788941525,
+          -0.022727788941525245,
+          2.977272211058475
+        ],
+        "response_plan": {
+          "missingness": "Inspect input source and apply a documented fallback.",
+          "mean_shift": "Inspect population changes; obtain representative labels before judging damage."
+        },
+        "note": "New synthetic monitoring exercise; no production thresholds or causal effects are established."
+      }
+    },
+    "32": {
+      "title": "An end to end investigation",
+      "result": {
+        "original_book_reproduction": {
+          "seed": 20261004,
+          "validation_rmse": {
+            "constant": 12.768796382339534,
+            "linear": 5.083285338352859,
+            "expanded": 3.6436866451456087
+          },
+          "selected": "expanded",
+          "test": {
+            "rmse": 3.5903817422682165,
+            "mae": 2.7364151104180037,
+            "coverage": 0.904,
+            "mean_interval_width": 11.497465994436965
+          },
+          "shifted": {
+            "rmse": 5.55897210793392,
+            "mae": 3.7813642044903184,
+            "coverage": 0.812,
+            "mean_interval_width": 11.497465994436965
+          },
+          "conformal_rank": 226,
+          "conformal_radius": 5.748732997218482,
+          "test_mse_improvement_over_constant": 168.7961549083207,
+          "paired_bootstrap_95_percent_interval": [
+            132.84414138249264,
+            207.01168997401146
+          ],
+          "selected_coefficients": [
+            79.82086507039021,
+            7.077180503078816,
+            9.844608131162815,
+            14.551453075014127,
+            -1.9588043559821473,
+            11.315301682026925
+          ]
+        },
+        "seeded_extension": {
+          "seed": 42,
+          "split_sizes": {
+            "train": 1000,
+            "validation": 250,
+            "calibration": 250,
+            "test": 250
+          },
+          "selected": "expanded",
+          "validation_rmse": {
+            "constant": 12.765414408137534,
+            "linear": 5.155940172418391,
+            "expanded": 3.670202201657542
+          },
+          "coefficients": [
+            80.19287746887912,
+            7.022127266046995,
+            9.665685541390944,
+            13.858849075698968,
+            -2.071607063105363,
+            13.16812475196975
+          ],
+          "conformal_radius": 5.978302640075043,
+          "conformal_rank": 226,
+          "test": {
+            "rmse": 3.767922725721652,
+            "mae": 2.953107869812359,
+            "coverage": 0.884,
+            "covered_count": 221,
+            "count": 250,
+            "mean_interval_width": 11.956605280150086,
+            "subgroups": {
+              "weekday": {
+                "count": 183,
+                "coverage": 0.9508196721311475
+              },
+              "weekend": {
+                "count": 67,
+                "coverage": 0.7014925373134329
+              },
+              "promoted_weekend": {
+                "count": 24,
+                "coverage": 0.6666666666666666
+              }
+            }
+          },
+          "paired_bootstrap": {
+            "mean_improvement": 196.54605340778102,
+            "interval_95_percent": [
+              157.81424651869696,
+              243.81798241714057
+            ],
+            "repeats": 2000
+          },
+          "controlled_scenarios": {
+            "nominal_fresh": {
+              "rmse": 3.5116826199394855,
+              "mae": 2.672115341637721,
+              "coverage": 0.924,
+              "covered_count": 231,
+              "count": 250,
+              "mean_interval_width": 11.956605280150086,
+              "subgroups": {
+                "weekday": {
+                  "count": 179,
+                  "coverage": 0.9664804469273743
+                },
+                "weekend": {
+                  "count": 71,
+                  "coverage": 0.8169014084507042
+                },
+                "promoted_weekend": {
+                  "count": 21,
+                  "coverage": 0.8095238095238095
+                }
+              }
+            },
+            "input_shift_only": {
+              "rmse": 3.531453513032531,
+              "mae": 2.6965148419807927,
+              "coverage": 0.924,
+              "covered_count": 231,
+              "count": 250,
+              "mean_interval_width": 11.956605280150086,
+              "subgroups": {
+                "weekday": {
+                  "count": 179,
+                  "coverage": 0.9608938547486033
+                },
+                "weekend": {
+                  "count": 71,
+                  "coverage": 0.8309859154929577
+                },
+                "promoted_weekend": {
+                  "count": 21,
+                  "coverage": 0.8095238095238095
+                }
+              }
+            },
+            "concept_shift_only": {
+              "rmse": 4.794800792577093,
+              "mae": 3.3541943815064226,
+              "coverage": 0.864,
+              "covered_count": 216,
+              "count": 250,
+              "mean_interval_width": 11.956605280150086,
+              "subgroups": {
+                "weekday": {
+                  "count": 179,
+                  "coverage": 0.9664804469273743
+                },
+                "weekend": {
+                  "count": 71,
+                  "coverage": 0.6056338028169014
+                },
+                "promoted_weekend": {
+                  "count": 21,
+                  "coverage": 0.09523809523809523
+                }
+              }
+            },
+            "both_shifts": {
+              "rmse": 4.811967380490747,
+              "mae": 3.3763857998415467,
+              "coverage": 0.864,
+              "covered_count": 216,
+              "count": 250,
+              "mean_interval_width": 11.956605280150086,
+              "subgroups": {
+                "weekday": {
+                  "count": 179,
+                  "coverage": 0.9608938547486033
+                },
+                "weekend": {
+                  "count": 71,
+                  "coverage": 0.6197183098591549
+                },
+                "promoted_weekend": {
+                  "count": 21,
+                  "coverage": 0.09523809523809523
+                }
+              }
+            }
+          }
+        },
+        "note": "Original uses data seed 20261004 and bootstrap seed 314159; --seed changes only the extension."
+      }
+    }
+  }
+}

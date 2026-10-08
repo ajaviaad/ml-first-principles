@@ -1,0 +1,36 @@
+{
+  "seed": 20261004,
+  "validation_rmse": {
+    "constant": 12.768796382339534,
+    "linear": 5.083285338352859,
+    "expanded": 3.6436866451456087
+  },
+  "selected": "expanded",
+  "test": {
+    "rmse": 3.5903817422682165,
+    "mae": 2.7364151104180037,
+    "coverage": 0.904,
+    "mean_interval_width": 11.497465994436965
+  },
+  "shifted": {
+    "rmse": 5.55897210793392,
+    "mae": 3.7813642044903184,
+    "coverage": 0.812,
+    "mean_interval_width": 11.497465994436965
+  },
+  "conformal_rank": 226,
+  "conformal_radius": 5.748732997218482,
+  "test_mse_improvement_over_constant": 168.7961549083207,
+  "paired_bootstrap_95_percent_interval": [
+    132.84414138249264,
+    207.01168997401146
+  ],
+  "selected_coefficients": [
+    79.82086507039021,
+    7.077180503078816,
+    9.844608131162815,
+    14.551453075014127,
+    -1.9588043559821473,
+    11.315301682026925
+  ]
+}

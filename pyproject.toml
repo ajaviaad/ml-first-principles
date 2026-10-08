@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ml-first-principles-companion"
+version = "1.0.0"
+description = "Self-contained NumPy experiments and lessons for learning machine learning"
+requires-python = ">=3.11"
+dependencies = ["numpy==2.3.5"]
+readme = "README.md"
+
+[project.scripts]
+mlfirst = "mlfirst.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["mlfirst*", "book_code*"]
+
+[tool.setuptools.package-data]
+book_code = ["source_manifest.json"]

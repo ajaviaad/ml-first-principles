@@ -1,0 +1,27 @@
+{
+  "source": "Machine_Learning_from_First_Principles.docx",
+  "edition": "First edition 2026",
+  "extraction": "Code paragraph text, in document order, UTF-8 with LF line endings and a final newline. No algorithm changes.",
+  "files": {
+    "companion_classical.py": {
+      "sha256": "1d3e8389641436d1cf19db910530323662bc90567bea5f82753d21dd9bc4ea44",
+      "lines": 324
+    },
+    "companion_deep.py": {
+      "sha256": "0c8eb67bb4129754cb58358ce4049f60d4a8e07bfd9b77af8549e31b86e6a87e",
+      "lines": 174
+    },
+    "companion_rl.py": {
+      "sha256": "6353fe7f8762c696f9d522a337fc6db2ddb8eae06cd253a919e398a8f4d1cea4",
+      "lines": 169
+    },
+    "companion_investigation.py": {
+      "sha256": "6754c9a4e0f585485a1beaa467f40b7898a392dfbce1dc7e1d76ee82a652f394",
+      "lines": 86
+    },
+    "chapter03_array_example.py": {
+      "sha256": "ee484a022784ec7e49f4796ea029a269688ddb1b8a6de04effb2eabe4f67fe5f",
+      "lines": 7
+    }
+  }
+}
